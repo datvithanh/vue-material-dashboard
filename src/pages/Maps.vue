@@ -21,7 +21,7 @@ var icons = {
 };
 
 export default {
-  mounted() {
+  created() {
     loader.load().then(function (google) {
       var myLatlng = new google.maps.LatLng(21.002984, 105.845009);
       var mapOptions = {
