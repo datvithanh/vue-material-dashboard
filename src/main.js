@@ -17,6 +17,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App";
+import VueAxios from "./plugins/axios";
 
 // router setup
 import routes from "./routes/routes";
@@ -44,7 +45,7 @@ Vue.use(MaterialDashboard);
 Vue.use(GlobalComponents);
 Vue.use(GlobalDirectives);
 Vue.use(Notifications);
-
+Vue.use(VueAxios);
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
