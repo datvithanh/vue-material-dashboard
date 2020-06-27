@@ -2,22 +2,70 @@
   <div class="content">
     <div class="md-layout">
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
+      >
+        <stats-card data-background-color="green">
+          <template slot="header">
+            <md-icon>mood</md-icon>
+          </template>
+
+          <template slot="content">
+            <p class="category">Quality</p>
+            <h3 class="title">
+              {{ this.data_db.today_tds }}
+              <small>TDS</small>
+            </h3>
+          </template>
+
+          <template slot="footer">
+            <div class="stats">
+              <md-icon>date_range</md-icon>
+              Last 3 min
+            </div>
+          </template>
+        </stats-card>
+      </div>
+      <div
+        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
+      >
+        <stats-card data-background-color="blue">
+          <template slot="header">
+            <md-icon>opacity</md-icon>
+          </template>
+
+          <template slot="content">
+            <p class="category">Usage</p>
+            <h3 class="title">
+              {{ this.data_db.today_usage }}
+              <small>Litres</small>
+            </h3>
+          </template>
+
+          <template slot="footer">
+            <div class="stats">
+              <md-icon>date_range</md-icon>
+              Last 24 hours
+            </div>
+          </template>
+        </stats-card>
+      </div>
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-200 md-size-50"
       >
         <chart-card
-          :chart-data="dailySalesChart.data"
-          :chart-options="dailySalesChart.options"
+          :chart-data.sync="dailyTDSChart.data"
+          :chart-options="dailyTDSChart.options"
           :chart-type="'Line'"
           data-background-color="blue"
         >
           <template slot="content">
-            <h4 class="title">Daily Sales</h4>
-            <p class="category">
+            <h4 class="title">Daily TDS</h4>
+            <!-- <p class="category">
               <span class="text-success"
                 ><i class="fas fa-long-arrow-alt-up"></i> 55%
               </span>
               increase in today sales.
-            </p>
+            </p> -->
           </template>
 
           <template slot="footer">
@@ -28,7 +76,7 @@
           </template>
         </chart-card>
       </div>
-      <div
+      <!-- <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
       >
         <chart-card
@@ -52,18 +100,18 @@
             </div>
           </template>
         </chart-card>
-      </div>
+      </div> -->
       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
+        class="md-layout-item md-medium-size-100 md-xsmall-size-200 md-size-50"
       >
         <chart-card
-          :chart-data="dataCompletedTasksChart.data"
-          :chart-options="dataCompletedTasksChart.options"
+          :chart-data="dailyUsageChart.data"
+          :chart-options="dailyUsageChart.options"
           :chart-type="'Line'"
           data-background-color="green"
         >
           <template slot="content">
-            <h4 class="title">Completed Tasks</h4>
+            <h4 class="title">Daily Usage</h4>
             <p class="category">
               Last Campaign Performance
             </p>
@@ -77,52 +125,7 @@
           </template>
         </chart-card>
       </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="green">
-          <template slot="header">
-            <md-icon>store</md-icon>
-          </template>
-
-          <template slot="content">
-            <p class="category">Revenue</p>
-            <h3 class="title">$34,245</h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>date_range</md-icon>
-              Last 24 Hours
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="orange">
-          <template slot="header">
-            <md-icon>content_copy</md-icon>
-          </template>
-
-          <template slot="content">
-            <p class="category">Used Space</p>
-            <h3 class="title">
-              49/50
-              <small>GB</small>
-            </h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon class="text-danger">warning</md-icon>
-              <a href="#pablo">Get More Space...</a>
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
+      <!-- <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
         <stats-card data-background-color="red">
@@ -142,8 +145,8 @@
             </div>
           </template>
         </stats-card>
-      </div>
-      <div
+      </div> -->
+      <!-- <div
         class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
       >
         <stats-card data-background-color="blue">
@@ -163,8 +166,8 @@
             </div>
           </template>
         </stats-card>
-      </div>
-      <div
+      </div> -->
+      <!-- <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <md-card>
@@ -176,8 +179,8 @@
             <ordered-table table-header-color="orange"></ordered-table>
           </md-card-content>
         </md-card>
-      </div>
-      <div
+      </div> -->
+      <!-- <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
       >
         <nav-tabs-card>
@@ -198,7 +201,7 @@
             </md-tabs>
           </template>
         </nav-tabs-card>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -206,25 +209,26 @@
 <script>
 import {
   StatsCard,
-  ChartCard,
-  NavTabsCard,
-  NavTabsTable,
-  OrderedTable
+  ChartCard
+  // NavTabsCard,
+  // NavTabsTable,
+  // OrderedTable
 } from "@/components";
 
 export default {
   components: {
     StatsCard,
-    ChartCard,
-    NavTabsCard,
-    NavTabsTable,
-    OrderedTable
+    ChartCard
+    // NavTabsCard,
+    // NavTabsTable,
+    // OrderedTable
   },
   data() {
     return {
-      dailySalesChart: {
+      data_db: {},
+      dailyTDSChart: {
         data: {
-          labels: ["M", "T", "W", "T", "F", "S", "S"],
+          labels: [1, 2, 3, 4, 5, 6, 7],
           series: [[12, 17, 7, 17, 23, 18, 38]]
         },
         options: {
@@ -232,7 +236,7 @@ export default {
             tension: 0
           }),
           low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          high: 1200, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,
@@ -241,7 +245,7 @@ export default {
           }
         }
       },
-      dataCompletedTasksChart: {
+      dailyUsageChart: {
         data: {
           labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
           series: [[230, 750, 450, 300, 280, 240, 200, 190]]
@@ -252,7 +256,7 @@ export default {
             tension: 0
           }),
           low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          high: 1200, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,
@@ -307,6 +311,53 @@ export default {
         ]
       }
     };
+  },
+  created() {
+    this.$axios
+      .get("http://139.162.10.81:5000/dashboard")
+      .then(response => {
+        this.data_db = response.data;
+        // console.log(this.data_db)  ;
+        // this.dailyTDSChart = this.data_db.tds_history;
+        var tds_labels = new Array();
+        // console.log(this.data_db.tds_history.length);
+        tds_labels = Array.from(
+          Array(this.data_db.tds_history.length),
+          (_, i) => i + 1
+        );
+        var tds_series = new Array(1);
+        tds_series[0] = this.data_db.tds_history;
+        console.log(tds_labels);
+        console.log(tds_series);
+
+        this.dailyTDSChart.data = {
+          labels: tds_labels,
+          series: tds_series
+        };
+
+        var usage_labels = new Array();
+        // console.log(this.data_db.tds_history.length);
+        usage_labels = Array.from(
+          Array(this.data_db.usage_history.length),
+          (_, i) => i + 1
+        );
+        var usage_series = new Array(1);
+        usage_series[0] = this.data_db.usage_history;
+        console.log(usage_labels);
+        console.log(usage_series);
+
+        this.dailyUsageChart.data = {
+          labels: usage_labels,
+          series: usage_series
+        };
+        // this.dailyTDSChart.data.labels = labels;
+        // this.dailyTDSChart.data.series[0] = this.data_db.tds_history;
+        // console.log(this.dailyTDSChart.data);
+        // console.log(this.data_db.tds_history);
+      })
+      .catch(e => {
+        this.errors.push(e);
+      });
   }
 };
 </script>
